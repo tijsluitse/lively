@@ -4,10 +4,10 @@
 Student: Tijs Luitse
 
 ##Summary:
-Semantics in HTML5
-The web is for everyone
-Expanding the clickable area
-Caching
+- Semantics in HTML5
+- The web is for everyone
+- Expanding the clickable area
+- Caching
 
 ##Semantic HTML
 
