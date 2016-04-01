@@ -30,7 +30,7 @@ By looking at a huge project like Bundlin, it is even harder to know what the de
 
 ###Navigation
 
-First, I noticed the use of <ul class=”group”>’s in the navigation sidebar. When looking deeper into this section of the website I was noticing there was something wrong.
+First, I noticed the use of ```<ul class=”group”>```’s in the navigation sidebar. When looking deeper into this section of the website I was noticing there was something wrong.
 
 The HTML5 specification defines <nav> as: “The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element only sections that consist of major navigation blocks are appropriate for the nav element. In particular, it is common for footers to have a list of links to various key parts of a site, but the footer element is more appropriate in such cases, and no nav element is necessary for those links.”
 
