@@ -1,3 +1,1 @@
-# Lively {
-  Final exercise: Bundlin;
-}
+# Lively { final-exercise: Bundlin; }
