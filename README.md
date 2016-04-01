@@ -32,9 +32,9 @@ By looking at a huge project like Bundlin, it is even harder to know what the de
 
 First, I noticed the use of ```<ul class=”group”>```’s in the navigation sidebar. When looking deeper into this section of the website I was noticing there was something wrong.
 
-The HTML5 specification defines <nav> as: “The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element only sections that consist of major navigation blocks are appropriate for the nav element. In particular, it is common for footers to have a list of links to various key parts of a site, but the footer element is more appropriate in such cases, and no nav element is necessary for those links.”
+The HTML5 specification defines ```<nav>``` as: “The nav element represents a section of a page that links to other pages or to parts within the page: a section with navigation links. Not all groups of links on a page need to be in a nav element only sections that consist of major navigation blocks are appropriate for the nav element. In particular, it is common for footers to have a list of links to various key parts of a site, but the footer element is more appropriate in such cases, and no nav element is necessary for those links.”
 
-So when an <ul> element which has only one listed <li> element, it isn’t a list of things. If you want to use a <ul> in the navigation, be sure that the different elements (in this case, the logo and login) are all inside different <li>’s, which are inside one <ul>, inside the <nav>. 
+So when an ```<ul>``` element which has only one listed ```<li>``` element, it isn’t a list of things. If you want to use a ```<ul>``` in the navigation, be sure that the different elements (in this case, the logo and login) are all inside different ```<li>```’s, which are inside one ```<ul>```, inside the ```<nav>```. 
 
 ```
 <ul class="group">
@@ -85,9 +85,9 @@ Source: [HTML5 Doctor](http://html5doctor.com/nav-element/)
 
 ###Nesting
 
-After further research I came across more problems, when looking at the code what surprises me is that the development team has not been consistent in the use of <a> or <button> elements, <img> elements inside <p>’s, and the use of <div>’s to create a button or link. 
+After further research I came across more problems, when looking at the code what surprises me is that the development team has not been consistent in the use of ```<a>``` or ```<button>``` elements, ```<img>``` elements inside ```<p>```’s, and the use of ```<div>```’s to create a button or link. 
 
-Focussing on the intro of the website, I was shocked seeing an <p> element with within two images and an <a> element.  
+Focussing on the intro of the website, I was shocked seeing an ```<p>``` element with within two images and an <a> element.  
 
 ```
 <p class="bln-credits bln-credits-small">
@@ -98,7 +98,7 @@ Focussing on the intro of the website, I was shocked seeing an <p> element with 
 </p>
 ```
 
-In this case, the content inside the <p> element has nothing to do with text or textual content. To be precise it’s an image linked to another page with some kind of a header to explain the page link. In this case, I would prefer to use a <div> element. “The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.” -
+In this case, the content inside the ```<p>``` element has nothing to do with text or textual content. To be precise it’s an image linked to another page with some kind of a header to explain the page link. In this case, I would prefer to use a ```<div>``` element. “The div element has no special meaning at all. It represents its children. It can be used with the class, lang, and title attributes to mark up semantics common to a group of consecutive elements.” -
 W3C Specification.
 
 ```
@@ -114,9 +114,9 @@ W3C Specification.
 
 The web needs to be usable for every user, in what situation he or she is. People walking around with a crying baby on their arm or someone with a broken arm maybe uses only the keyboard to navigate through a website. The web also needs to be designed for them. 
 
-When creating a clickable area, the developer needs to decide what element to use. Some people may think a <div> will do the trick, just add an event listener on the element in Javascript and the trick is done. But that’s certainly not how it’s done. Using a <div> for a clickable area is the most disgusting thing to do when developing a website. There is no semantically value in a <div> element. Screen Readers will not see it as a button, there is no standard focus state and when disabling Javascript, the <div> is worse less. 
+When creating a clickable area, the developer needs to decide what element to use. Some people may think a ``<div>`` will do the trick, just add an event listener on the element in Javascript and the trick is done. But that’s certainly not how it’s done. Using a ``<div>`` for a clickable area is the most disgusting thing to do when developing a website. There is no semantically value in a ```<div>``` element. Screen Readers will not see it as a button, there is no standard focus state and when disabling Javascript, the ``<div>`` is worse less. 
 
-Ok, so how do you need to choose between creating an <a> or an <button> to navigate. You only need to ask one question: What will happen when the user activates this control? In The Microsoft User Interface Interaction Guidelines lies the answer. There are two cases: Is this action to navigate to another page or used as an anchor for a section on the same page? Then use an <a> link element with a useful href. When the action of the clickable element is to create a popup or other inpage action? Use the <button> element.
+Ok, so how do you need to choose between creating an ``<a>`` or an ``<button>`` to navigate. You only need to ask one question: What will happen when the user activates this control? In The Microsoft User Interface Interaction Guidelines lies the answer. There are two cases: Is this action to navigate to another page or used as an anchor for a section on the same page? Then use an ```<a>``` link element with a useful href. When the action of the clickable element is to create a popup or other inpage action? Use the ``<button>`` element.
 
 ```
 <a title="Sign in" class="text" ng-click="login()">
@@ -125,13 +125,13 @@ Ok, so how do you need to choose between creating an <a> or an <button> to navig
 </a>
 ```
 
-This is the login button from the navigation section. When the user clicks this element it creates a popup which is not necessary to open in a new window. Therefore, I would choose a <button> instead of an <a> element. 
+This is the login button from the navigation section. When the user clicks this element it creates a popup which is not necessary to open in a new window. Therefore, I would choose a ```<button>``` instead of an ```<a>``` element. 
 
 Source: [Microsoft](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742402.aspx)
 
 The web is for everyone
 
-In the case of buttons, there are two main users which benefit from the <button> element being used properly. These are screen reader and keyboard users. The <button> element has three main features:
+In the case of buttons, there are two main users which benefit from the ```<button>``` element being used properly. These are screen reader and keyboard users. The ```<button>``` element has three main features:
 
 - Buttons can receive focus.
 - Buttons can be operated conventionally by the keyboard once focused.
@@ -139,7 +139,7 @@ In the case of buttons, there are two main users which benefit from the <button>
 
 Making websites usable by keyboard is part of WCAG 2.0 (the Web Content Accessibility Guidelines, published by the Web Accessibility Initiative).
 
-On the Bundlin website, all focus pseudo-classes are disabled. Therefore, the website is not accessible for keyboard users. When there is no focus on the selected item, the user has no clue about his position on the website. For screen readers, it’s necessary to make proper use of <button>’s and <a>’s elements for clickable areas or links. So creating a <div> with an event listener in Javascript is not accessible for tabbing or screen readers. 
+On the Bundlin website, all focus pseudo-classes are disabled. Therefore, the website is not accessible for keyboard users. When there is no focus on the selected item, the user has no clue about his position on the website. For screen readers, it’s necessary to make proper use of ```<button>```’s and ```<a>```’s elements for clickable areas or links. So creating a ```<div>``` with an event listener in Javascript is not accessible for tabbing or screen readers. 
 
 So * { outline: none; } is not possible in today’s web development. If you don’t like the blue outline, create a new style, don’t disable it. 
 
@@ -163,7 +163,7 @@ Source: Apps for all By Heydon Pickering
 
 ###Conclusion
 
-The Bundlin homepage is now totally renewed with <button>’s and <a> on the right places and most of the HTML is semantically correct. Users who only use the keyboard can now navigate through the website without any problems. 
+The Bundlin homepage is now totally renewed with ```<button>```’s and ```<a>``` on the right places and most of the HTML is semantically correct. Users who only use the keyboard can now navigate through the website without any problems. 
 
 ###Expanding the clickable area 
 
