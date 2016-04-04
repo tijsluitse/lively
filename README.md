@@ -1,13 +1,15 @@
-# Lively { final-exercise: Bundlin; }
+#Lively { final-exercise: Bundlin; }
 ##Semantics in HTML & Accessibility
 
 Student: Tijs Luitse
 
 ##Summary:
-- Semantics in HTML5
+- Semantic HTML
+- Navigation
+- Nesting
+- Buttons
 - The web is for everyone
 - Expanding the clickable area
-- Caching
 
 ##Semantic HTML
 
@@ -129,7 +131,7 @@ This is the login button from the navigation section. When the user clicks this 
 
 Source: [Microsoft](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742402.aspx)
 
-The web is for everyone
+###The web is for everyone
 
 In the case of buttons, there are two main users which benefit from the ```<button>``` element being used properly. These are screen reader and keyboard users. The ```<button>``` element has three main features:
 
@@ -141,7 +143,7 @@ Making websites usable by keyboard is part of WCAG 2.0 (the Web Content Accessib
 
 On the Bundlin website, all focus pseudo-classes are disabled. Therefore, the website is not accessible for keyboard users. When there is no focus on the selected item, the user has no clue about his position on the website. For screen readers, it’s necessary to make proper use of ```<button>```’s and ```<a>```’s elements for clickable areas or links. So creating a ```<div>``` with an event listener in Javascript is not accessible for tabbing or screen readers. 
 
-So * { outline: none; } is not possible in today’s web development. If you don’t like the blue outline, create a new style, don’t disable it. 
+So ```* { outline: none; }``` is not possible in today’s web development. If you don’t like the blue outline, create a new style, don’t disable it. 
 
 ```
 <div class="playbutton bln-button bln-button-invert bln-button-play" ng-click="playVideo()" ng-show="!playvideo" ng-class="{'bln-button-played': video_played}">
@@ -159,17 +161,31 @@ So * { outline: none; } is not possible in today’s web development. If you don
 
 The next thing I noticed was the video on the homepage, which is not visible, till the user clicks the button above. But when the user is using the keyboard and tabs through the website, even when the container is not folded you tab through all the buttons inside the Vimeo video. The solution is a display: none; and display: block; when the button is clicked. 
 
+```
+.bln-section-video-intro {
+    display: none;
+}
+
+.bln-section-video-intro.active {
+    display: block;
+}
+```
+
 Source: Apps for all By Heydon Pickering
-
-###Conclusion
-
-The Bundlin homepage is now totally renewed with ```<button>```’s and ```<a>``` on the right places and most of the HTML is semantically correct. Users who only use the keyboard can now navigate through the website without any problems. 
 
 ###Expanding the clickable area 
 
-On mobile phones / tablets, where touch gestures come into place, it's sometimes hard to target little links with your finger. Mostly because it was primarily designed for a desktop use. Jacob Rossi, an Internet Explorer 10 engineer who worked on the awesome Microsoft's pointer API (yeah true story man), said at the 2013 W3Conf that every touch oriented elements should be at least 40x40 pixels wide, to ensure the best user experience.
+On mobile phones or tablets, where clicks become touch, it's sometimes hard to target little links with your finger. Mostly because it was primarily designed for a desktop use. Jacob Rossi, an Internet Explorer 10 engineer who worked on the Microsoft's pointer API, said at the 2013 W3Conf that every touch oriented elements should be at least 40x40 pixels wide, to ensure the best user experience.
 
-And he is right but does it mean you have to redesign all your stuff to make everything bigger!? Well, obviously yes. But, if you can't (for any kind of human reason :), here's a quick CSS trick that lets you increase the “clickable area”.
+```
+.bln-button:after {
+    content: '';
+    position: absolute;
+    top: -10px; bottom: -10px; 
+    left: -10px; right: -10px; 
+}
+```
+
 
 Source: [Front-back](http://front-back.com/expand-clickable-areas-for-a-better-touch-experience)
 
