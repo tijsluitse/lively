@@ -186,14 +186,7 @@ On mobile phones or tablets, where clicks become touch, it's sometimes hard to t
 }
 ```
 
-
 Source: [Front-back](http://front-back.com/expand-clickable-areas-for-a-better-touch-experience)
-
-Caching 
-Pagespeed insights
-    https://developers.google.com/speed/pagespeed/insights/?url=bundlin.com
-    https://developers.google.com/speed/docs/insights/LeverageBrowserCaching
-
 
 
 
